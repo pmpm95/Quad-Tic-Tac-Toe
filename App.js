@@ -7,6 +7,7 @@ import {  SafeAreaView,
           View,
         } from 'react-native'
 
+//초기 선공권을 랜덤하게 정하는 변수
 var randomTurn = Math.floor(Math.random() * 10) < 5 ? true : false
 
 //newGameState 라는 클래스를 생성
