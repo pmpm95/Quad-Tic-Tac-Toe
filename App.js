@@ -84,37 +84,6 @@ export default class App extends React.Component {
         </View>
       </SafeAreaView>
     )
-
-    /*return (
-      <SafeAreaView style={style}>
-
-       <View style={{flex: 1, backgroundColor: '#D0FA58', borderBottomWidth: 20, borderBottomColor: 'green'}}>
-          <View style={{flex: 4,}}></View>
-          <View style ={{flex: 5, flexDirection: 'row',}}>
-            <View style={{flex: 5, alignItems: 'flex-end'}}>
-              <Text style={{fontSize: 20,}}>Quad Tic Tac Toe</Text>
-            </View>
-            <View style={{flex: 2,}}>
-              <View style={{flex: 1,}}></View>
-              <View style={{flex: 8, flexDirection: 'row'}}>
-                <View style={{flex: 4,}}></View>
-                <View style={{flex: 3,}}>
-                 <NewGameButton onNewGame={() => this.onNewGame()}/>
-                </View>
-                <View style={{flex: 1,}}></View>
-              </View>
-            </View>
-          </View>
-        </View>
-
-        <Board squares={this.state.squares} onMove={(i) => this.onMove(i)} />
-
-        <View style={{flex: 2,}}>
-          <Status turn={this.whoseTurn()} winner={winner(this.state.squares)}/>
-          <View style={{flex: 1,}}></View>
-        </View>
-      </SafeAreaView>
-    )*/
   }
 }
 
