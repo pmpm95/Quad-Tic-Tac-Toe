@@ -48,7 +48,8 @@ apk파일 링크 : https://expo.io/artifacts/7761d793-4e39-4f05-aa48-f25c94d5f7d
       <Text style={[textStyle, {color : (label === 'X' ? '#e15043' : '#A901DB')}]}>{label}</Text>
     </TouchableHighlight>
   )
-}```
+}
+```
 
 * 그 후 한칸을 오른쪽으로 늘려 한 줄을 만들었습니다.
 ```const Row = ({squares, startIndex, onMove}) => {
@@ -62,7 +63,8 @@ apk파일 링크 : https://expo.io/artifacts/7761d793-4e39-4f05-aa48-f25c94d5f7d
       <Square label={squares[startIndex + 5]} onPress={() => onMove(startIndex + 5)} />
     </View>
   )
-}```
+}
+```
 
 * 마지막으로 한 줄을 아래로 늘려 보드판을 생성했습니다.
 ```const Board = ({squares, onMove}) => {
@@ -76,7 +78,8 @@ apk파일 링크 : https://expo.io/artifacts/7761d793-4e39-4f05-aa48-f25c94d5f7d
       <Row squares={squares} startIndex={30} onMove={onMove} />
     </View>
   )
-}```
+}
+```
 
 - - -
 
