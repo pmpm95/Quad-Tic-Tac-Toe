@@ -12,15 +12,15 @@ apk파일 링크 : https://expo.io/artifacts/7761d793-4e39-4f05-aa48-f25c94d5f7d
 ## 진행 방식
 
 1. App 실행시 'X' 플레이어와 'O' 플레이어의 턴이 랜덤하게 결정됩니다.
-<center><img src="https://user-images.githubusercontent.com/53474371/64537865-94e20780-d356-11e9-9a51-afeb6f354b41.jpg" width="20%"></center>
+<img src="https://user-images.githubusercontent.com/53474371/64537865-94e20780-d356-11e9-9a51-afeb6f354b41.jpg" width="20%">
 2. 보드안에 칸을 터치할 경우 말을 놓을 수 있습니다.
-<center><img src="https://user-images.githubusercontent.com/53474371/64537926-af1be580-d356-11e9-9f47-a4fd2a729b17.jpg" width="20%"></center>
+<img src="https://user-images.githubusercontent.com/53474371/64537926-af1be580-d356-11e9-9f47-a4fd2a729b17.jpg" width="20%">
 3. 4목을 먼저 완성시키면 승리합니다.
-<center><img src="https://user-images.githubusercontent.com/53474371/64537944-b7742080-d356-11e9-9fb9-92d4281e4d93.jpg" width="20%"></center>
+<img src="https://user-images.githubusercontent.com/53474371/64537944-b7742080-d356-11e9-9fb9-92d4281e4d93.jpg" width="20%">
 3-1. 6x6판이 가득찰때까지 양쪽도 4목을 완성할 수 없을 경우 무승부가 됩니다.
-<center><img src="https://user-images.githubusercontent.com/53474371/64537968-bfcc5b80-d356-11e9-9822-d0791e9c96c6.jpg" width="20%"></center>
+<img src="https://user-images.githubusercontent.com/53474371/64537968-bfcc5b80-d356-11e9-9822-d0791e9c96c6.jpg" width="20%">
 4. Reset 탭을 눌러 게임을 초기화합니다. 이때, 선공했던 플레이어의 반대 플레이어가 선공을 갖습니다.
-<center><img src="https://user-images.githubusercontent.com/53474371/64537983-c78c0000-d356-11e9-8b5c-6193fbd5b204.jpg" width="20%"></center>
+<img src="https://user-images.githubusercontent.com/53474371/64537983-c78c0000-d356-11e9-8b5c-6193fbd5b204.jpg" width="20%">
 5. 위의 과정이 반복됩니다.
 
 - - -
