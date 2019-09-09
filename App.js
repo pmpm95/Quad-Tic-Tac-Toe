@@ -165,6 +165,7 @@ const NewGameButton = ({onNewGame}) => {
   )
 }
 
+//승자 결정
 const winner = squares => {
 
   //4x4 승리조건 
@@ -208,7 +209,3 @@ const winner = squares => {
   //그 외의 경우엔 승자가 결정되지 않는다.
   return undefined
 }
-
-
-//#FFBF00 노랑
-//#DF013A x색
