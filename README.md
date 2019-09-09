@@ -94,6 +94,7 @@ apk파일 링크 : https://expo.io/artifacts/7761d793-4e39-4f05-aa48-f25c94d5f7d
 const winner = squares => {
 
   //4x4 승리조건
+  
   const lines = [
     [0, 1, 2, 3],
     [4, 5, 6, 7],
@@ -108,11 +109,14 @@ const winner = squares => {
   ]
 
   //뽑아내는 4x4의 첫번째 index 집합
+  
   let xIndex = [0, 1, 2, 6, 7, 8, 12, 13, 14]
 
   while(xIndex.length > 0) {
     let x = xIndex.shift()
+    
     //4x4로 추출
+    
     let check = squares.slice(x, x+4).concat(squares.slice(x+6, x+10)).concat(squares.slice(x+12, x+16)).concat(squares.slice(x+18, x+22))
     for (let i = 0; i < lines.length; i++) {
       const [a, b, c, d] = lines[i]
