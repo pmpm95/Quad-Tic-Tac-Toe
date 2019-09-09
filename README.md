@@ -1,5 +1,4 @@
-React Native를 이용한  
-6x6보드 4목게임
+React Native를 이용한 6x6보드 4목게임
 =============
 
 apk파일 링크 : https://expo.io/artifacts/7761d793-4e39-4f05-aa48-f25c94d5f7d1
