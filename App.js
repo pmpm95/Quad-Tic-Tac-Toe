@@ -20,7 +20,7 @@ const newGameState = {
 //컴포넌트 클래스를 상속받음
 export default class App extends React.Component {
 
-  //생성자를 통해 state의 초기값을 설정함
+  //생성자를 통해 state의 초기값을 설정
   constructor(props) {
     super(props)
     this.state = newGameState
@@ -87,7 +87,7 @@ export default class App extends React.Component {
   }
 }
 
-//square를 옆으로 만든 Row 메소드를 아래로 만드는 Board 메소드
+//한줄을 아래로 늘린 보드판
 const Board = ({squares, onMove}) => {
   return (
     <View style={{flex: 6, justifyContent: 'center',}}>
@@ -101,7 +101,7 @@ const Board = ({squares, onMove}) => {
   )
 }
 
-//square를 옆으로 만드는 Row 메소드
+//한칸을 오른쪽으로 늘린 한줄
 const Row = ({squares, startIndex, onMove}) => {
   return (
     <View style={{flexDirection: 'row', justifyContent: 'center',}}>
@@ -115,7 +115,7 @@ const Row = ({squares, startIndex, onMove}) => {
   )
 }
 
-//Board 안에 들어가는 한칸인 Square 메소드
+//보드판 한칸
 const Square = ({label, onPress}) => {
   const style = {
     width: 50,
@@ -138,7 +138,7 @@ const Square = ({label, onPress}) => {
   )
 }
 
-//현재 상태를 출력하는 Text 태그를 구성하는 메소드
+//현재 상태를 출력하는 하단 바
 const Status = ({turn, winner}) => {
   const text = winner === null ? 'Tie game :-/'
         : winner !== undefined ? winner + ' wins!'
@@ -156,7 +156,7 @@ const Status = ({turn, winner}) => {
   )
 }
 
-//게임을 초기화 시켜주는 메소드
+//초기화 버튼
 const NewGameButton = ({onNewGame}) => {
   return ( 
         <TouchableOpacity style={{justifyContent: 'center', backgroundColor: 'green', alignItems: 'flex-end'}} onPress={onNewGame}>
@@ -165,10 +165,9 @@ const NewGameButton = ({onNewGame}) => {
   )
 }
 
-//승자를 결정하는 메소드
 const winner = squares => {
-  //4목을 결정짓는 경우들
 
+  //4x4 승리조건 
   const lines = [
     [0, 1, 2, 3],
     [4, 5, 6, 7],
@@ -181,7 +180,8 @@ const winner = squares => {
     [0, 5, 10, 15],
     [3, 6, 9, 12],
   ]
-
+  
+  //뽑아내는 4x4의 첫번째 index 집합
   let xIndex = [0, 1, 2, 6, 7, 8, 12, 13, 14]
 
   while(xIndex.length > 0)
@@ -189,19 +189,22 @@ const winner = squares => {
 
     let x = xIndex.shift()
 
-    let check = squares.slice(x, x+4).concat(squares.slice(x+6, x+10)).concat(squares.slice(x+12, x+16)).concat(squares.slice(x+18, x+22))
+    //4x4로 추출
+    let check = squares.slice(x, x+4).concat(squares.slice(x+6, x+10))
+                        .concat(squares.slice(x+12, x+16)).concat(squares.slice(x+18, x+22))
 
     for (let i = 0; i < lines.length; i++) {
       const [a, b, c, d] = lines[i]
-
+      
       //확인한 4곳의 square가 값이 같으면 그 값의 기호가 승자다
       if (check[a] && check[a] === check[b] && check[a] === check[c] && check[a] === check[d]) {
           return check[a]
       }
     }
   }
+  
   //Squares 배열내에 null(빈칸)이 존재하지 않으면 무승부 처리
-  if (squares.indexOf(null) === -1) return null // tie game
+  if (squares.indexOf(null) === -1) return null   
   //그 외의 경우엔 승자가 결정되지 않는다.
   return undefined
 }
