@@ -87,8 +87,44 @@ apk파일 링크 : https://expo.io/artifacts/7761d793-4e39-4f05-aa48-f25c94d5f7d
 
 >OMR 형식의 답안지를 체점할 때 같은 종이에 정답인 부분을 구멍뚫고 답안지와 겹쳐놓아 체점하는 방법을 적용해보았습니다.
 
-<img src="https://user-images.githubusercontent.com/53474371/64538978-96143400-d358-11e9-9dd7-51bdaf07d486.PNG" width="100%">
+<img src="https://user-images.githubusercontent.com/53474371/64538978-96143400-d358-11e9-9dd7-51bdaf07d486.PNG" width="100%">  
 <img src="https://user-images.githubusercontent.com/53474371/64539043-b3490280-d358-11e9-9e38-4eb420c0001a.PNG" width="100%">
+
+```
+const winner = squares => {
+
+  const lines = [
+    [0, 1, 2, 3],
+    [4, 5, 6, 7],
+    [8, 9, 10, 11],
+    [12, 13, 14, 15],
+    [0, 4, 8, 12],
+    [1, 5, 9, 13],
+    [2, 6, 10, 14],
+    [3, 7, 11, 15],
+    [0, 5, 10, 15],
+    [3, 6, 9, 12],
+  ]
+
+  let xIndex = [0, 1, 2, 6, 7, 8, 12, 13, 14]
+
+  while(xIndex.length > 0) {
+
+    let x = xIndex.shift()
+
+    let check = squares.slice(x, x+4).concat(squares.slice(x+6, x+10)).concat(squares.slice(x+12, x+16)).concat(squares.slice(x+18, x+22))
+
+    for (let i = 0; i < lines.length; i++) {
+      const [a, b, c, d] = lines[i]
+      if (check[a] && check[a] === check[b] && check[a] === check[c] && check[a] === check[d]) {
+          return check[a]
+      }
+    }
+  }
+  if (squares.indexOf(null) === -1) return null // tie game
+  return undefined
+}
+```
 
 - - -
 
