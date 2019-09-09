@@ -7,8 +7,20 @@ import {  SafeAreaView,
           View,
         } from 'react-native'
 
+/* commit 과정에서 추가된 내용 */
+
 //초기 선공권을 랜덤하게 정하는 변수
 var randomTurn = Math.floor(Math.random() * 10) < 5 ? true : false
+
+/* commit 과정에서 변경된 내용 
+
+const newGameState = {
+  //squares: Array(9).fill(null),
+  squares: Array(36).fill(null),
+  xIsNext: true,
+}
+
+*/
 
 //newGameState 라는 클래스를 생성
 //초기 상태의 state를 정의
@@ -53,6 +65,25 @@ export default class App extends React.Component {
       xIsNext: !this.state.xIsNext,
     })
   }
+          
+  /* commit 과정에서 변경된 부분
+
+  render() {
+    const style = {
+      backgroundColor: 'beige',
+      flex: 1,
+      alignItems: 'center',
+    }
+
+    return (
+      <SafeAreaView style={style}>
+        <Board squares={this.state.squares} onMove={(i) => this.onMove(i)} />
+        <Status turn={this.whoseTurn()} winner={winner(this.state.squares)} onNewGame={() => this.onNewGame()} />
+      </SafeAreaView>
+    )
+  }
+
+  */
 
   //화면에 랜더링 되는 부분
   render() {
@@ -164,6 +195,32 @@ const NewGameButton = ({onNewGame}) => {
         </TouchableOpacity>
   )
 }
+
+/* commit 과정에서 변경된 내용
+
+const winner = squares => {
+  const lines = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+  ]
+
+  for (let i = 0; i < lines.length; i++) {
+    const [a, b, c] = lines[i]
+    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+      return squares[a]
+    }
+  }
+  if (squares.indexOf(null) === -1) return null
+  return undefined
+}
+
+*/
 
 //승자 결정
 const winner = squares => {
