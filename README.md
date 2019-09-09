@@ -127,7 +127,8 @@ const winner = squares => {
       }
     }
   }
-  if (squares.indexOf(null) === -1) return null // 
+  
+  if (squares.indexOf(null) === -1) return null //무승부
   return undefined
 }
 ```
