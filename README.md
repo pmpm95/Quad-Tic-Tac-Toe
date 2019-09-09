@@ -117,7 +117,8 @@ const winner = squares => {
     
     //4x4로 추출
     
-    let check = squares.slice(x, x+4).concat(squares.slice(x+6, x+10)).concat(squares.slice(x+12, x+16)).concat(squares.slice(x+18, x+22))
+    let check = squares.slice(x, x+4).concat(squares.slice(x+6, x+10))
+                        .concat(squares.slice(x+12, x+16)).concat(squares.slice(x+18, x+22))
     for (let i = 0; i < lines.length; i++) {
       const [a, b, c, d] = lines[i]
       if (check[a] && check[a] === check[b] && check[a] === check[c] && check[a] === check[d]) {
