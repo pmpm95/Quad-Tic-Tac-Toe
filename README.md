@@ -128,7 +128,7 @@ const winner = squares => {
     }
   }
   
-  if (squares.indexOf(null) === -1) return null //무승부
+  if (squares.indexOf(null) === -1) return null //빈공간이 없다면 무승부
   return undefined
 }
 ```
