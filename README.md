@@ -28,7 +28,8 @@ apk파일 링크 : https://expo.io/artifacts/7761d793-4e39-4f05-aa48-f25c94d5f7d
 ## 보드 판 구성
 
 * 보드 판의 말이 놓여지는 칸 하나를 생성 했습니다.
-```const Square = ({label, onPress}) => {
+```
+const Square = ({label, onPress}) => {
   const style = {
     width: 50,
     height: 50,
@@ -52,7 +53,8 @@ apk파일 링크 : https://expo.io/artifacts/7761d793-4e39-4f05-aa48-f25c94d5f7d
 ```
 
 * 그 후 한칸을 오른쪽으로 늘려 한 줄을 만들었습니다.
-```const Row = ({squares, startIndex, onMove}) => {
+```
+const Row = ({squares, startIndex, onMove}) => {
   return (
     <View style={{flexDirection: 'row', justifyContent: 'center',}}>
       <Square label={squares[startIndex    ]} onPress={() => onMove(startIndex    )} />
@@ -67,7 +69,8 @@ apk파일 링크 : https://expo.io/artifacts/7761d793-4e39-4f05-aa48-f25c94d5f7d
 ```
 
 * 마지막으로 한 줄을 아래로 늘려 보드판을 생성했습니다.
-```const Board = ({squares, onMove}) => {
+```
+const Board = ({squares, onMove}) => {
   return (
     <View style={{flex: 6, justifyContent: 'center',}}>
       <Row squares={squares} startIndex={0} onMove={onMove} />
