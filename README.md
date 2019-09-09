@@ -28,8 +28,53 @@ apk파일 링크 : https://expo.io/artifacts/7761d793-4e39-4f05-aa48-f25c94d5f7d
 ## 보드 판 구성
 
 * 보드 판의 말이 놓여지는 칸 하나를 생성 했습니다.
+```const Square = ({label, onPress}) => {
+  const style = {
+    width: 50,
+    height: 50,
+    borderWidth: 2,
+    borderColor: '#0B610B',
+    justifyContent: 'center',
+  }
+
+  const textStyle = {
+    textAlign: 'center',
+    fontSize: 36,
+    fontWeight: 'bold',
+  }
+
+  return (
+    <TouchableHighlight style={style} onPress={onPress}>
+      <Text style={[textStyle, {color : (label === 'X' ? '#e15043' : '#A901DB')}]}>{label}</Text>
+    </TouchableHighlight>
+  )
+} ```
 * 그 후 한칸을 오른쪽으로 늘려 한 줄을 만들었습니다.
+```const Row = ({squares, startIndex, onMove}) => {
+  return (
+    <View style={{flexDirection: 'row', justifyContent: 'center',}}>
+      <Square label={squares[startIndex    ]} onPress={() => onMove(startIndex    )} />
+      <Square label={squares[startIndex + 1]} onPress={() => onMove(startIndex + 1)} />
+      <Square label={squares[startIndex + 2]} onPress={() => onMove(startIndex + 2)} />
+      <Square label={squares[startIndex + 3]} onPress={() => onMove(startIndex + 3)} />
+      <Square label={squares[startIndex + 4]} onPress={() => onMove(startIndex + 4)} />
+      <Square label={squares[startIndex + 5]} onPress={() => onMove(startIndex + 5)} />
+    </View>
+  )
+}```
 * 마지막으로 한 줄을 아래로 늘려 보드판을 생성했습니다.
+```const Board = ({squares, onMove}) => {
+  return (
+    <View style={{flex: 6, justifyContent: 'center',}}>
+      <Row squares={squares} startIndex={0} onMove={onMove} />
+      <Row squares={squares} startIndex={6} onMove={onMove} />
+      <Row squares={squares} startIndex={12} onMove={onMove} />
+      <Row squares={squares} startIndex={18} onMove={onMove} />
+      <Row squares={squares} startIndex={24} onMove={onMove} />
+      <Row squares={squares} startIndex={30} onMove={onMove} />
+    </View>
+  )
+}```
 
 - - -
 
